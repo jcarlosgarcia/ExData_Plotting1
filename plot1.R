@@ -2,7 +2,7 @@
 library(data.table)
 filename <- "household_power_consumption.txt"
 
-# fread reads more efficiently than read.table
+# fread reads more efficiently than read.table(). Missing values are encoded as "?"
 data <- fread("household_power_consumption.txt", sep = ";", header = TRUE, na.strings = c("?"))
 
 # Convert data$Date to date
