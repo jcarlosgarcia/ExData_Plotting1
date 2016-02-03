@@ -16,8 +16,10 @@ energyData$Datetime <- strptime(paste(energyData$Date, energyData$Time), "%Y-%m-
 
 # Construct the plot and generate a PNG file
 png(filename = "plot3.png", width = 480, height = 480)
-with(energyData, plot(Datetime, Sub_metering_1, type = "l", xlab = "", ylab = "Energy sub metering"))
-with(energyData, lines(Datetime, Sub_metering_2, col = "red"))
-with(energyData, lines(Datetime, Sub_metering_3, col = "blue"))
+with(energyData, {
+  plot(Datetime, Sub_metering_1, type = "l", xlab = "", ylab = "Energy sub metering")
+  lines(Datetime, Sub_metering_2, col = "red")
+  lines(Datetime, Sub_metering_3, col = "blue")
+})
 legend("topright", lty = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 dev.off()
