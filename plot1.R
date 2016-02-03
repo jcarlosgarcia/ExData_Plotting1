@@ -9,7 +9,7 @@ data <- fread("household_power_consumption.txt", sep = ";", header = TRUE, na.st
 data$Date <- as.Date(strptime(data$Date, "%d/%m/%Y"))
 
 # Select observations between 2007-02-01 and 2007-02-02
-powerConsumptionData <- data[data$Date >= "2007-02-01" & data$Date <= "2007-02-02"]
+powerConsumptionData <- data[data$Date >= "2007-02-01" & data$Date <= "2007-02-02", ]
 
 # Construct the plot and generate a PNG file
 png(filename = "plot1.png", width = 480, height = 480)
