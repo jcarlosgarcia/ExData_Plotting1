@@ -14,6 +14,7 @@ globalActivePowerData <- data[data$Date >= "2007-02-01" & data$Date <= "2007-02-
 # Create a new column to store the date and time as a unique value
 globalActivePowerData$Datetime <- strptime(paste(globalActivePowerData$Date, globalActivePowerData$Time), "%Y-%m-%d %H:%M:%S")
 
+# Construct the plot and generate a PNG file
 png(filename = "plot2.png", width = 480, height = 480)
 with(globalActivePowerData, plot(Datetime, Global_active_power, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)"))
 dev.off()
