@@ -6,7 +6,7 @@ filename <- "household_power_consumption.txt"
 data <- fread("household_power_consumption.txt", sep = ";", header = TRUE, na.strings = c("?"))
 
 # Convert data$Date to date
-data$Date <- as.Date(strptime(data$Date, "%d/%m/%Y"))
+data$Date <- as.Date(data$Date, "%d/%m/%Y")
 
 # Select observations between 2007-02-01 and 2007-02-02
 powerConsumptionData <- data[data$Date >= "2007-02-01" & data$Date <= "2007-02-02", ]
